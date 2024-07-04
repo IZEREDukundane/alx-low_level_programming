@@ -1,27 +1,30 @@
 #include <stdio.h>
+#include "main.h"
 
-char *rot13(char *str) {
-    char *p = str;
-    char alphabet[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    char rot13[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-    int i;
+/**
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
+ *
+ * Return: the resulting string
+ */
+char *rot13(char *s)
+{
+	int i, j;
 
-    while (*p) {
-        for (i = 0; i < 52; i++) {
-            if (*p == alphabet[i]) {  // The single if statement
-                *p = rot13[i];
-                break;
-            }
-        }
-        p++;
-    }
-    return str;
-}
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-int main() {
-    char str[] = "Hello, World!";
-    printf("Original: %s\n", str);
-    printf("ROT13: %s\n", rot13(str));
-    printf("Back to original: %s\n", rot13(str));  // Applying ROT13 again to decode
-    return 0;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; a[j] != '\0'; j++)
+		{
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+				break;
+			}
+		}
+	}
+
+	return (s);
 }
