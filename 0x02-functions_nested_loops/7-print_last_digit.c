@@ -8,18 +8,15 @@
  *
  * Return: last digit of r
  */
-int print_last_digit(int r)
+int print_last_digit(int n)
 {
-	int i;
+	int last;
 
-	if (r < 0)
+	lat = n % 98;
+	if (last < 0)
 	{
-		i = -1 * (r % 10);
+		last = last * -1;
 	}
-	else
-	{
-		i = r % 10;
-	}
-	_putchar((i % 10) + '0');
-	return (i % 10);
+	_putchar(last + '0');
+	return (last);
 }
