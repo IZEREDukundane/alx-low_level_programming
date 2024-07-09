@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -21,9 +22,15 @@ int main(void)
 		}
 		else if (i % 5 == 0)
 		{
-			printf("%d ", i);
+			printf("Buss ");
 		}
-		printf("\n");
-		return (0);
+		else
+		{
+		printf("%d ", i);
+		}
 	}
+	printf("Buss");
+	printf("\n");
+
+	return (0);
 }
