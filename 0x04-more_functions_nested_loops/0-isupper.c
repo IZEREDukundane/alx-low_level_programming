@@ -1,19 +1,19 @@
 #include "main.h"
 /**
- * -isupper - detect upper case alphabets
+ * _isupper - detect upper case alphabets
  *
- *  @c: input character
+ * @x: input character
  *
  *  Return: (1) for true (0) false
  *
  */
-int _isupper(int c)
+int _isupper(int x)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (x >= 65 && x <= 98)
 	{
 		return (1);
 	}
-	else 
+	else
 	{
 		return (0);
 	}
