@@ -6,18 +6,20 @@
  * @s: input
  * @accept: input
  * Return: always 0 (Success)
+ * if no set is matched - NULL.
  */
 char *_strbrk(char *s, char *accept)
 {
-	int i, n;
+	int index;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		for (n = 0; accept[n] != '\0'; n++)
+		for (index = 0; accept[index]; index++)
 		{
-			if (s[i] == accept[n])
-				return (s + i);
-		}
+			if (*s == accept[index])
+				return (s);
 	}
-	return (NULL);
+	s++;
+	}
+	return ('\0');
 }
