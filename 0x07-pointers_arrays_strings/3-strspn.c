@@ -2,28 +2,29 @@
 
 /**
  * _strspn - Entry point
- * @s:input
+ * @s: input
  * @accept: input
  * Return: Always 0 (Success)
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, n, value, check;
+	unsigned int bytes = 0;
+	int index;
 
-	value = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		check = 0;
-
-		for (n = 0; accept[n] != '\0'; n++)
+		for (index = 0; accept[index]; index++)
 		{
-			if (accept[n] == s[i])
+			if (*s == accept[index])
 			{
-				value++;
-				check = 1;
+				bytes++;
+				break;
 			}
+			else if (accept[index + 1] == '\0')
+				return (bytes);
 		}
-		if (check == 0)
+		s++;
+	}
+	return (bytes);
 }
