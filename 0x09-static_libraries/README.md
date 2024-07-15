@@ -1,2 +1,1 @@
-0x09-stasdtic libraries
-creating a static library to use withthe main file...
+0x09. C - Static libraries
