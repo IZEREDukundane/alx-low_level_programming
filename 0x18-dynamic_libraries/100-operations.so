@@ -1,1 +1,6 @@
-#!/usr/lib/python3
+#!/usr/lib/python3.8
+
+cops = ctypes.CDLL('./100-operations.so')
+/ctypes/__init__.py, 
+line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
